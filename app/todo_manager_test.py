@@ -1,5 +1,7 @@
 import unittest
 
+from app.todo_manager import TodoManager
+
 
 class TodoManagerTest(unittest.TestCase):
     def test_add_task(self):
