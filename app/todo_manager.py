@@ -1,11 +1,20 @@
+from app.todo_table import TodoTable
+
+
 class TodoManager:
-    def __init__(self):
-        self.todo = dict()
+    
+    @staticmethod
+    def save(id, task, is_done):
+        return TodoTable().add_task(id=id, task=task, is_done=is_done)
 
-    def add_task(self, id, task):
-        self.todo["id"] = id
-        self.todo["task"] = task
-        return self.todo
+    @staticmethod
+    def get(id):
+        return TodoTable().get_task_by_id(id=id)
 
-    def get_task_by_id(self, id):
-        pass
+    @staticmethod
+    def update(id):
+        return TodoTable().update_task_status(id=id)
+
+    @staticmethod
+    def delete(id):
+        return TodoTable().delete_task(id=id)
