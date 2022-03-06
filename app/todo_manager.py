@@ -3,18 +3,17 @@ from app.todo_table import TodoTable
 
 class TodoManager:
     
-    @staticmethod
-    def save(id, task, is_done):
-        return TodoTable().add_task(id=id, task=task, is_done=is_done)
+    def __init__(self):
+        self.todo_table = TodoTable()
+    
+    def save(self, id, task, is_done):
+        return self.todo_table.add_task(id=id, task=task, is_done=is_done)
 
-    @staticmethod
-    def get(id):
-        return TodoTable().get_task_by_id(id=id)
+    def get(self, id):
+        return self.todo_table.get_task_by_id(id=id)
 
-    @staticmethod
-    def update(id):
-        return TodoTable().update_task_status(id=id)
+    def update(self, id):
+        return self.todo_table.update_task_status(id=id)
 
-    @staticmethod
-    def delete(id):
-        return TodoTable().delete_task(id=id)
+    def delete(self, id):
+        return self.todo_table.delete_task(id=id)

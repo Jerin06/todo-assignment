@@ -1,3 +1,4 @@
+
 class TodoTable:
     """A hashmap to perform CRUD operations for todo tasks"""
 
@@ -13,7 +14,7 @@ class TodoTable:
     def get_task_by_id(self, id):
         if id in self.todo:
             return self.get(id)
-        return None
+        return None 
 
     def update_task_status(self, id):
         if id in self.todo:
@@ -31,5 +32,5 @@ class TodoTable:
         return {
             "id": id,
             "task": self.todo[id]["task"],
-            "is_done": self.todo[id]["is_done"],
+            "is_done": self.todo[id]["is_done"]
         }
