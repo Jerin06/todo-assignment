@@ -1,11 +1,12 @@
 from fastapi import FastAPI, HTTPException
 
 from app.schema import TodoBase, TodoCreate
+from app.todo_table import TodoTable
 from app.todo_manager import TodoManager
 
 
 app = FastAPI()
-todo_manager = TodoManager()
+todo_manager = TodoManager(TodoTable)
 
 @app.post("/todo/create")
 def create_todo(todo: TodoCreate):

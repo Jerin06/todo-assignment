@@ -3,7 +3,7 @@ class TodoTable:
     """A hashmap to perform CRUD operations for todo tasks"""
 
     def __init__(self):
-        self.todo = dict()
+        self.todo = dict() # in memory storage using dict
 
     def add_task(self, id, task, is_done):
         if id not in self.todo:

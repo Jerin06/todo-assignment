@@ -1,11 +1,12 @@
 import unittest
 
 from app.todo_manager import TodoManager
+from app.todo_table import TodoTable
 
 
 class TodoManagerTest(unittest.TestCase):
     def setUp(self):
-        self.todo_manager = TodoManager()
+        self.todo_manager = TodoManager(TodoTable)
         self.todo_manager.save("1234", "The second task in the list", False)
         self.todo_manager.save("1235", "The third task in the list", False)
         self.todo_manager.save("1236", "The third task in the list", False)
